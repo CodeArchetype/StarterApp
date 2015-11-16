@@ -115,6 +115,23 @@
 			}
 		</style>
 	</head>
+    <style type="text/css">
+body {
+	padding: 0;
+	margin: 0;
+}
+html, body, #map {
+	height: 100%;
+}
+</style>
+<script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script> 
+<script>
+	var map = L.map('map').setView([52.04, -0.73], 12);
+        L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		maxZoom: 18			
+	}).addTo(map);
+</script>
+</head>
 	<body style="visibility:hidden;">
 	<div id="settings" dojoType="dojox/mobile/View">
 		<div dojoType="dojox/mobile/Heading" data-dojo-props="fixed: 'top'">
@@ -131,5 +148,6 @@
 			<span id="log">&nbsp;</span><br />
 		</div>
 	</div>
+    <div id="map"></div>
 	</body>
 </html>
